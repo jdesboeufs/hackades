@@ -1,4 +1,4 @@
 hackades
 ========
 
-Turn ADES data to REST API
+Turn ADES data into REST API
