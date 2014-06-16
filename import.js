@@ -44,25 +44,6 @@ client.connect(connectionString, function(err, db) {
                     else if (v.type === Date) analysis.properties[k] = moment(record[v.key], 'DD/MM/YYYY HH:mm:ss').toDate();
                 }
             });
-            // if (analysis.properties.bssInseeCode) analysis.geometry = communesByInsee[analysis.properties.bssInseeCode];
-
-            // if (analysis.properties.analysisResult && analysis.properties.analysisStatus && analysis.properties.analysisStatus === 1) {
-            //     if (analysis.properties.analysisResult < 25) analysis.properties._storage_options = {
-            //       color: "Black",
-            //       weight: "1",
-            //       fillColor: "DarkGreen"
-            //     };
-            //     if (analysis.properties.analysisResult >= 25 && analysis.properties.analysisResult <= 50) analysis.properties._storage_options = {
-            //       color: "Black",
-            //       weight: "1",
-            //       fillColor: "DarkOrange"
-            //     };
-            //     if (analysis.properties.analysisResult > 50) analysis.properties._storage_options = {
-            //       color: "Black",
-            //       weight: "1",
-            //       fillColor: "DarkRed"
-            //     };
-            // }
 
             collection.insert(analysis, function(err, prelevement) {
                 console.log(prelevement);
@@ -73,6 +54,7 @@ client.connect(connectionString, function(err, db) {
         })
         .on('end', function(count) {
             console.log('Count: ' + count);
+            process.exit();
         });
 
 });

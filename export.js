@@ -21,25 +21,13 @@ client.connect(connectionString, function(err, db) {
         if (err) return console.log(err);
 
         var output = {
-            "type": "FeatureCollection",
-            "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
-            "features": _.map(results, function(result) {
-                var options;
-                if (result.average < 25) options = {
-                  color: "Black",
-                  weight: "1",
-                  fillColor: "DarkGreen"
-                };
-                if (result.average >= 25 && result.average <= 50) options = {
-                  color: "Black",
-                  weight: "1",
-                  fillColor: "DarkOrange"
-                };
-                if (result.average > 50) options = {
-                  color: "Black",
-                  weight: "1",
-                  fillColor: "DarkRed"
-                };
+            type: 'FeatureCollection',
+            crs: { type: "name", properties: { name: 'urn:ogc:def:crs:OGC:1.3:CRS84' } },
+            features: _.map(results, function(result) {
+                var options = { color: 'Black', weight: '1' };
+                if (result.average < 25) options.fillColor = 'DarkGreen';
+                if (result.average >= 25 && result.average <= 50) options.fillColor = 'DarkOrange';
+                if (result.average > 50) options.fillColor = 'DarkRed';
                 return {
                     type: "Feature",
                     properties: {
@@ -52,7 +40,7 @@ client.connect(connectionString, function(err, db) {
             })
         };
      
-        console.log(JSON.stringify(output, true, 4));
+        console.log(JSON.stringify(output));
         process.exit();
     });
 
