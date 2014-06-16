@@ -1,0 +1,24 @@
+{
+  "name": "hackades",
+  "version": "0.0.1",
+  "description": "Turn ADES data into REST API",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jdesboeufs/hackades.git"
+  },
+  "keywords": [
+    "ADES",
+    "water",
+    "eaufrance",
+    "json",
+    "rest",
+    "onema"
+  ],
+  "author": "Jerome Desboeufs <jerome.desboeufs@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jdesboeufs/hackades/issues"
+  },
+  "homepage": "https://github.com/jdesboeufs/hackades"
+}
