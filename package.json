@@ -20,5 +20,12 @@
   "bugs": {
     "url": "https://github.com/jdesboeufs/hackades/issues"
   },
-  "homepage": "https://github.com/jdesboeufs/hackades"
+  "homepage": "https://github.com/jdesboeufs/hackades",
+  "dependencies": {
+    "csv": "^0.3.7",
+    "iconv-lite": "^0.4.3",
+    "lodash": "^2.4.1",
+    "moment": "^2.7.0",
+    "mongodb": "^1.4.6"
+  }
 }
